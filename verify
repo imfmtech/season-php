@@ -1,0 +1,30 @@
+<?php
+// ---------- START CONTROLLO STAGIONI PERPETUO ------------//
+$primavera = "21-03-".date('Y');
+$estate = "21-06-".date('Y');
+$autunno = "22-09-".date('Y');
+$inverno = "21-12-".date('Y');
+$oggi_sta = strtotime(date('d-m-Y'));
+$primavera_sta = strtotime($primavera);
+$estate_sta = strtotime($estate);
+$autunno_sta = strtotime($autunno);
+$inverno_sta = strtotime($inverno);
+
+if ($oggi_sta >= $inverno_sta) {
+    $tagione="INV";
+    echo $tagione;
+} elseif ($oggi_sta >= $autunno_sta and $oggi_sta < $inverno_sta) {
+    $tagione="AUT";
+    echo $tagione;
+} elseif ($oggi_sta >= $estate_sta and $oggi_sta < $autunno_sta) {
+    $tagione="EST";
+    echo $tagione;
+} elseif ($oggi_sta >= $primavera_sta) {
+    $tagione="PRI";
+    echo $tagione;   
+} else {
+    $tagione="INV";
+    echo $tagione;
+}
+// ---------- END CONTROLLO STAGIONI PERPETUO ------------//
+?>
